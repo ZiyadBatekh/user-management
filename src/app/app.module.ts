@@ -8,6 +8,8 @@ import { UserDetailsComponent } from './features/users/components/user-details/u
 import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 import { UserSearchComponent } from './shared/components/user-search/user-search.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,17 @@ import { FormsModule } from '@angular/forms';
     LoadingSpinnerComponent,
     UserSearchComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot([
+      { path: '', component: UserListComponent },
+      { path: 'user/:id', component: UserDetailsComponent },
+    ]),
+  ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
