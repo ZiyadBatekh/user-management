@@ -1,1 +1,62 @@
-<p>user-list works!</p>
+<!-- user-list.component.html -->
+<div class="text-center">
+  <!-- Header Section -->
+  <header class="py-3 mb-4 border-bottom header">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a
+        routerLink="/"
+        class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-decoration-none"
+      >
+        <span class="header-title">Users</span>
+      </a>
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0">
+        <app-user-search
+          (searchResults)="handleSearchResults($event)"
+        ></app-user-search>
+      </form>
+    </div>
+  </header>
+  <!-- Paginated list of users -->
+  <div>
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div *ngIf="!loading">
+    <div *ngIf="users.length > 0; else notFound">
+      <!-- Display users -->
+      <div
+        *ngFor="let user of users"
+        class="user-card card mb-3 mt-4"
+        (click)="navigateToUserDetail(user.id)"
+      >
+        <div class="card-body">
+          <div class="text-center">
+            <img
+              [src]="user.avatar"
+              class="img-fluid rounded-circle mb-3 user-img"
+              alt="User Avatar"
+            />
+            <h5 class="card-title">
+              {{ user.first_name }} {{ user.last_name }}
+            </h5>
+            <p class="card-text">{{ user.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #notFound>
+      <div class="text-center" role="alert">No users found.</div>
+    </ng-template>
+  </div>
+</div>
+<!-- Pagination  -->
+<div class="pagination justify-content-center mt-4">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <a class="page-link" (click)="loadUsers(currentPage - 1)"> Previous </a>
+    </li>
+
+    <li class="page-item" [class.disabled]="currentPage === totalPages">
+      <a class="page-link" (click)="loadUsers(currentPage + 1)"> Next </a>
+    </li>
+  </ul>
+</div>
