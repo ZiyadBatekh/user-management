@@ -1,0 +1,15 @@
+/* loading-spinner.component.css */
+.spinner-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+
+    width: 50px;
+    /* Adjust width and height according to your GIF size */
+    height: 50px;
+}
