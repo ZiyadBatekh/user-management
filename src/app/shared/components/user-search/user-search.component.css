@@ -1,0 +1,13 @@
+/* Search Input Styles */
+.search {
+    max-width: var(--max-width);
+    box-shadow: var(--box-shadow);
+    margin: 0 auto;
+    padding: 10px 40px 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.search:focus {
+    border: var(--border-hover);
+}

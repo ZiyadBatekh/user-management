@@ -7,6 +7,7 @@ import { UserListComponent } from './features/users/components/user-list/user-li
 import { UserDetailsComponent } from './features/users/components/user-details/user-details.component';
 import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 import { UserSearchComponent } from './shared/components/user-search/user-search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { UserSearchComponent } from './shared/components/user-search/user-search
     UserListComponent,
     UserDetailsComponent,
     LoadingSpinnerComponent,
-    UserSearchComponent
+    UserSearchComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

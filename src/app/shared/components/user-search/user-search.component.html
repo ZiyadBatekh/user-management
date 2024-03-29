@@ -1,1 +1,9 @@
-<p>user-search works!</p>
+<div class="search-container">
+  <input
+    type="number"
+    [(ngModel)]="searchText"
+    class="form-control search"
+    (input)="searchUser()"
+    placeholder="Search by ID..."
+  />
+</div>
