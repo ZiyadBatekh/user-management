@@ -1,1 +1,48 @@
-<p>user-details works!</p>
+<ng-container *ngIf="user">
+  <!-- Back Button -->
+  <div class="container mt-5">
+    <button class="btn btn-back" (click)="goBack()">Back</button>
+  </div>
+
+  <!-- User Card Details -->
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="user-card card mb-3 mt-3">
+      <div>
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+      <div *ngIf="!loading">
+        <div class="row g-0">
+          <div
+            class="col-md-3 d-flex flex-column align-items-center justify-content-center"
+          >
+            <img
+              [src]="user.avatar"
+              class="img-fluid rounded-circle d-flex user-img"
+            />
+            <p class="card-title mt-2">{{ user.email }}</p>
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <p class="user-name">
+                {{ user.first_name }} {{ user.last_name }}
+              </p>
+              <span class="tutor-info">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore
+                exercitationem totam nobis consequatur minima tempore, a quasi,
+                ex maiores autem repellat similique molestias assumenda est vel,
+                officiis itaque id dicta. Aliquam ad repudiandae, qui molestiae,
+                eveniet quod quos quibusdam aut reiciendis ex ducimus saepe
+                neque facere adipisci vel officia et ut inventore. Laudantium
+                est fuga eaque, distinctio obcaecati quas in. In id eligendi
+                impedit magni blanditiis provident nesciunt facere expedita
+                inventore repellendus, mollitia officiis laborum totam corrupti
+                ullam eius perferendis alias! Iusto laboriosam voluptates porro
+                autem aut, corporis earum
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
