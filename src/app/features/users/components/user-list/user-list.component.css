@@ -1,0 +1,62 @@
+.header {
+    background-color: rgb(248, 248, 248);
+    width: 100%
+}
+
+/* Header Title */
+.header-title {
+    color: var(--color-primary);
+    font-size: 25px;
+    font-weight: var(--font-weight);
+}
+
+/* Card Style */
+
+.user-card {
+    /* Maximum width of the card */
+    max-width: var(--max-width);
+    cursor: pointer;
+    border-radius: 20px;
+    /* Card shadow */
+    box-shadow: var(--box-shadow);
+    margin: 0 auto;
+}
+
+.user-card:hover {
+    /* Card hover border */
+    border: var(--border-hover);
+}
+
+.user-img {
+    height: 110px;
+    width: 110px;
+}
+
+.card-text {
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    color: var(--color-primary);
+}
+
+
+
+
+/* Pagination styles */
+
+.page-link {
+    color: var(--color-primary);
+}
+
+.pagination {
+    cursor: pointer;
+}
+
+.page-link.active,
+.active>.page-link {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.page-link:focus {
+    box-shadow: none;
+}
