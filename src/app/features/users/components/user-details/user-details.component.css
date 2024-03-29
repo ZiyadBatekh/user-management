@@ -1,0 +1,42 @@
+/* Card Styles */
+.user-card {
+    max-width: 1000px;
+    margin-bottom: 22px;
+    border-radius: 20px;
+}
+
+.user-name {
+    font-weight: 700;
+    font-size: 24px
+}
+
+.card-title {
+    color: var(--color-secondary);
+}
+
+.user-name {
+    color: var(--color-primary);
+}
+
+.user-img {
+    height: 125px;
+    width: 125px;
+}
+
+/* Back button styles */
+
+.btn-back {
+    width: 140px;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 700;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.btn-back:hover {
+    background-color: var(--color-hover);
+    transition: 0.5s ease-in-out;
+}
