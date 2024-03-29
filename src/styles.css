@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* import bootstrap */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+:root {
+    --max-width: 700px;
+    --font-size: 16px;
+    --border-hover: 1px solid rgb(6, 153, 205);
+    --font-weight: 700;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --color-primary: rgb(6, 153, 205);
+    --color-secondary: rgba(33, 37, 41, 0.75);
+    --color-hover: rgb(8, 126, 169);
+}
