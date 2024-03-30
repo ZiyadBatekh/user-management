@@ -54,11 +54,13 @@ export class UserListComponent implements OnInit {
   }
 
   handleSearchResults(searchResults: any[]): void {
-    if (searchResults.length > 0 || this.searchText === '') {
+    if (searchResults.length > 0) {
       // Show user cards if search results are not empty or search text is empty
       this.users = searchResults;
       this.totalPages = 0; // Reset total pages for search results
       this.showNoUsersMessage = false; // Hide "No users found" message
+    } else if (this.searchText === '') {
+      this.loadUsers(1);
     } else {
       // Hide user cards and show "No users found" message
       this.users = [];

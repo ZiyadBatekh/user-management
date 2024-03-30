@@ -18,17 +18,9 @@ export class UserSearchComponent {
     const userId = parseInt(this.searchText?.toString());
     if (!userId) {
       // No search text, emit all users
-      this.userService
-        .getUsers() // Fetch all users
-        .pipe(
-          catchError((error) => {
-            console.error('Error fetching users:', error);
-            return of({ data: [] }); // Return a dummy response with empty data
-          })
-        )
-        .subscribe((response) => {
-          this.searchResults.emit(response.data);
-        });
+
+      this.searchResults.emit([]);
+
       return;
     }
 
